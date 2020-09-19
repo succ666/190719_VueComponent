@@ -1,7 +1,15 @@
-import logo from './assets/imgs/logo.png'
-import  './assets/css/my.css'
+// import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
+import App from './App' // 引入自定义组件
 
-const image = new Image()
-image.src = logo
-document.body.appendChild(image)
-document.getElementById('root').innerHTML = '<h1>Hello222</h1>'
+// 注册全局组件
+// Vue.component('App',App)
+
+new Vue({
+  // el:'#root'
+  // 注册局部组件
+  components: { //注册组件(后面才能写组件标签)
+    App
+  },
+  template: '<App/>'
+}).$mount('#root')
